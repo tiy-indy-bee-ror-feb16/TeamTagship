@@ -31,6 +31,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'simple_form'
+gem 'socialization'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
