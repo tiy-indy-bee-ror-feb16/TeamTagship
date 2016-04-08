@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  body: MyString
-  user_id: 
+ship1:
+  body: "Why do I always forget to close the door when I go to the bathroom? #SillyMe"
+  user_id: 1
 
-two:
-  body: MyString
-  user_id: 
+ship2:
+  body: "Those mangoes are multiplying..."
+  user_id: 2
