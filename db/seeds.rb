@@ -27,6 +27,6 @@ followers.each { |follower| follower.follow!(user) }
 # Ships
 users = User.order(:created_at).take(50)
 20.times do
-  content = Faker::Lorem.sentence(1)
-  users.each { |u| u.ships.create!(body: content) }
+  # content = Faker::Lorem.sentence(2)
+  users.each { |u| u.ships.create!(body: Faker::Lorem.sentence(2)) }
 end

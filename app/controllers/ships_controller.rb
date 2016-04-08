@@ -4,6 +4,8 @@ class ShipsController < ApplicationController
   def index
     if current_user
       @user = current_user
+      @ship = Ship.new
+      @timeline = Ship.timeline(@user).page(params[:page])
     else
       #link to marketing landing page partial view
     end
