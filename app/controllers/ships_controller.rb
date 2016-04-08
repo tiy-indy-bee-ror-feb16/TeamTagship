@@ -3,9 +3,9 @@ class ShipsController < ApplicationController
 
   def index
     if current_user
-
+      @user = current_user
     else
-
+      #link to marketing landing page partial view
     end
   end
 

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user = User.find_by_email(params[:session][:email]).try(:authenticate, params[:session][:password])
       session[:user_id] = @user.id
       flash[:success] = "Hello, #{@user.username}."
-      redirect_to :users
+      redirect_to user_ships_path
     else
       flash[:warning] = "Incorrect email or password."
       render :new

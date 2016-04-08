@@ -10,7 +10,7 @@
   User.create!(
   username: Faker::StarWars.character,
   email: Faker::Internet.safe_email,
-  password_digest: Faker::Internet.password(8)
+  password: Faker::Internet.password(8)
   )
 
   User.all
