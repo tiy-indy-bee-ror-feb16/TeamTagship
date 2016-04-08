@@ -21,5 +21,12 @@ users = User.all
 user  = users.first
 following = users[2..50]
 followers = users[3..40]
-following.each { |followed| user.follow(followed) }
-followers.each { |follower| follower.follow(user) }
+following.each { |followed| user.follow!(followed) }
+followers.each { |follower| follower.follow!(user) }
+
+# Ships
+users = User.order(:created_at).take(50)
+20.times do
+  content = Faker::Lorem.sentence(1)
+  users.each { |u| u.ships.create!(body: content) }
+end
