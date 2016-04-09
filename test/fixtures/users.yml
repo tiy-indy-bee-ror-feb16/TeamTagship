@@ -1,11 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-user1:
-  username: WildMonkey666
-  email: wmonkey@gardenstate.com
-  password_digest: <%= BCrypt::Password.create "password" %>
-
-user2:
-  username: BarfDrinker
-  email: ilikethetaste@noreally.org
-  password_digest: <%= BCrypt::Password.create "password" %>

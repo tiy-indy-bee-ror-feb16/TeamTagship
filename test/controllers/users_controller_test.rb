@@ -2,8 +2,8 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
 
-  skip
   test "should show user" do
+    skip
     user = users(:user1)
     get :show, id: user.id
     assert assigns(:user)
