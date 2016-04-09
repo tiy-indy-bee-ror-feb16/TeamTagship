@@ -71,4 +71,19 @@ class ActiveSupport::TestCase
 
   @@valid_user = @@users[:valid].sample # a random valid user
 
+  # Establishing follows
+  @users = User.all
+  @user = User.first
+  @following = @users[2..50]
+  @followers = @users[3..40]
+  @following.each { |followed| @user.follow!(followed) }
+  @followers.each { |follower| follower.follow!(@user) }
+
+  # Making ships
+  @users.each do |u|
+    rand(5..25).times do
+      u.ships.create!(body: Faker::Lorem.sentence(2))
+    end
+  end
+
 end

@@ -209,6 +209,22 @@
         null,
         null
       ],
+      "/Users/macuser/TIY/TeamTagship/app/models/follow.rb": [
+        1,
+        null
+      ],
+      "/Users/macuser/TIY/TeamTagship/app/models/ship.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/macuser/TIY/TeamTagship/test/controllers/ship_routes_test.rb": [
         1,
         null,
@@ -262,6 +278,10 @@
       "/Users/macuser/TIY/TeamTagship/test/models/ship_test.rb": [
         1,
         null,
+        1,
+        null,
+        1,
+        1,
         1,
         null,
         null,
@@ -438,6 +458,6 @@
         null
       ]
     },
-    "timestamp": 1460224179
+    "timestamp": 1460229476
   }
 }
