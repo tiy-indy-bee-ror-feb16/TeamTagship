@@ -5,7 +5,7 @@ class ShipsController < ApplicationController
     if current_user
       @user = current_user
       @ship = Ship.new
-      @ships = Ship.timeline(@user).page(params[:page]).per(20)
+      @ships = Ship.timeline(@user).page(params[:page]).per(100)
     else
       #link to marketing landing page partial view
     end
