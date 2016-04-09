@@ -4,13 +4,13 @@
   </div>
   <div class="col-md-11 ship-body">
     <div class="ship-body-header">
-      <p><%= ship.user.username %></p>
+      <%= ship.user.username %>
     </div>
     <div class="ship-body-body">
       <%= ship.body %>
     </div>
     <div class="ship-body-footer">
-
+      <p>Posted on <%= ship.created_at.to_date.to_s %> at <%= ship.created_at.strftime("%I:%M%p") %></p>
     </div>
   </div>
 </div>
