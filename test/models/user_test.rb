@@ -2,28 +2,13 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   # For testing User model. Class tweaked to allow for both one-time setup and teardown as well as between-test setup and teardown.
-  class << self
-    def startup
-    end
-    def shutdown
-      puts 'runs only once at end'
-    end
-    def suite
-      mysuite = super
-      def mysuite.run(*args)
-        MyTest.startup()
-        super
-        MyTest.shutdown()
-      end
-      mysuite
-    end
-  end
 
   def setup
     @users = []
     100.times do |n|
       @users.push(instance_variable_set("@user#{n}", User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: Faker::Internet.password)))
     end
+    puts @@test
   end
 
   def teardown
@@ -53,37 +38,3 @@ class UserTest < ActiveSupport::TestCase
   end
 
 end
-
-
-
-# http://stackoverflow.com/questions/255969/in-rubys-testunittestcase-how-do-i-override-the-initialize-method
-#
-# class MyTest < Test::Unit::TestCase
-#     class << self
-#         def startup
-#             puts 'runs only once at start'
-#         end
-#         def shutdown
-#             puts 'runs only once at end'
-#         end
-#         def suite
-#             mysuite = super
-#             def mysuite.run(*args)
-#               MyTest.startup()
-#               super
-#               MyTest.shutdown()
-#             end
-#             mysuite
-#         end
-#     end
-#
-#     def setup
-#         puts 'runs before each test'
-#     end
-#     def teardown
-#         puts 'runs after each test'
-#     end
-#     def test_stuff
-#         assert(true)
-#     end
-# end

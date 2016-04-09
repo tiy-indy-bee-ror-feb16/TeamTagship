@@ -50,8 +50,6 @@ group :development, :test do
   gem 'simplecov'
   # Factory_girl for better fixtures
   gem 'factory_girl'
-  # Capybara for intergration testing
-  gem 'capybara'
 end
 
 group :development do
