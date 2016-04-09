@@ -9,9 +9,22 @@ class ActiveSupport::TestCase
   # fixtures :all # don't use fixtures
 
   # Add more helper methods to be used by all tests here...
-end
 
-class Minitest::Test
+  def self.user_hash(valid: true, inserted_value: nil, key: nil)
+    valid_hash = { username: Faker::Internet.user_name, email: Faker::Internet.email, password: Faker::Internet.password(8) }
+    if valid
+      valid_hash
+    else
+      if key.nil?
+        x[x.to_a.sample.flatten.first] = inserted_value # sets a random key in the hash to inserted_value
+      else
+        x[:key] = inserted_value # sets specific key in the hash to inserted_value
+      end
+    end
+  end
+
+
+
   @@users = {
     valid: [],
     invalid: {
@@ -33,7 +46,7 @@ class Minitest::Test
   end
 
   3.times do # easy password
-    @@users[:invalid][:easy_password].push(User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "BAAGAAAB".downcase))
+    @@users[:invalid][:easy_password].push(User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "baagaaab"))
   end
 
   3.times do # no password
@@ -57,4 +70,20 @@ class Minitest::Test
   end
 
   @@valid_user = @@users[:valid].sample # a random valid user
+
+  # Establishing follows
+  @users = User.all
+  @user = User.first
+  @following = @users[2..50]
+  @followers = @users[3..40]
+  @following.each { |followed| @user.follow!(followed) }
+  @followers.each { |follower| follower.follow!(@user) }
+
+  # Making ships
+  @users.each do |u|
+    rand(5..25).times do
+      u.ships.create!(body: Faker::Lorem.sentence(2))
+    end
+  end
+
 end

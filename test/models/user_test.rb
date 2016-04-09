@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # For testing User model. Class tweaked to allow for both one-time setup and teardown as well as between-test setup and teardown.
+  # For testing User model.
 
   def setup
     @valid_user = @@users[:valid].sample
@@ -22,13 +22,17 @@ class UserTest < ActiveSupport::TestCase
     refute @user.valid?, "#{@user.username}'s e-mail was not validated for uniqueness"
   end
 
+  test "validates username uniqueness" do
+    @user = @@users[:invalid][:dup_username].sample
+    refute @user.valid?, "#{@user.username}'s username was not validated for uniqueness"
+  end
+
   test "validates user password is at least eight characters long" do
     @user = @@users[:invalid][:short_password].sample
     refute @user.valid? , "#{@user.username}'s password was not validated for length"
   end
 
   test "validates user password contains at least four unique characters" do
-    # skip # this one makes Ruby explode atm
     @user = @@users[:invalid][:easy_password].sample
     refute @user.valid?, "#{@user.username}'s password was not validated for a minimum of four unique characters"
   end
