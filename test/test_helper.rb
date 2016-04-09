@@ -12,6 +12,24 @@ class ActiveSupport::TestCase
 end
 
 class Minitest::Test
+
+  def self.user_hash(valid: true, inserted_value: nil, *args=nil)
+      valid_hash = { username: Faker::Internet.user_name, email: Faker::Internet.email, password: Faker::Internet.password(8) }
+      if valid
+        valid_hash
+      else
+        if *args.nil?
+          x[x.to_a.sample.flatten.first] = inserted_value # sets a random key in the hash to nil
+        else
+          args.each do |arg|
+            x[:arg] = inserted_value # sets specific keys in the hash to nil
+          end
+        end
+      end
+  end
+
+
+
   @@users = {
     valid: [],
     invalid: {
