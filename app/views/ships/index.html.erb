@@ -5,9 +5,11 @@
 
     </div>
     <div class="col-md-8 timeline">
-      <% @timeline.each do |ship| %>
-        <%= ship.body %>
-      <% end %>
+      <%= render @ships %>
+      
+      <div class="row">
+        <%= paginate @ships %>
+      </div>
     </div>
   </div>
 </div>
