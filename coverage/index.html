@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-09T15:17:56-04:00">2016-04-09T15:17:56-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-09T16:22:23-04:00">2016-04-09T16:22:23-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">72.73%</span></span>
+    (<span class="covered_percent"><span class="red">73.47%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.76
+         0.77
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>27</b> files in total.
-    <b>143</b> relevant lines. 
-    <span class="green"><b>104</b> lines covered</span> and
+    <b>147</b> relevant lines. 
+    <span class="green"><b>108</b> lines covered</span> and
     <span class="red"><b>39</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -132,20 +132,20 @@
       
       <tr>
         <td class="strong"><a href="#872bad278234ef3f958cdb6d2d6dbdd844babb7d" class="src_link" title="app/models/ship.rb">app/models/ship.rb</a></td>
-        <td class="red strong">50.0 %</td>
-        <td>10</td>
-        <td>6</td>
+        <td class="red strong">57.14 %</td>
+        <td>11</td>
+        <td>7</td>
+        <td>4</td>
         <td>3</td>
-        <td>3</td>
-        <td>0.5</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#d0783e50c57beefe2dffd3c292ec25fdc6cb23c2" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>9</td>
-        <td>5</td>
-        <td>5</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -581,7 +581,7 @@
         <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">      @timeline = Ship.timeline(@user).page(params[:page])</code>
+          <code class="ruby">      @ships = Ship.timeline(@user).page(params[:page]).per(20)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -1173,10 +1173,10 @@
         <div class="source_table" id="872bad278234ef3f958cdb6d2d6dbdd844babb7d">
   <div class="header">
     <h3>app/models/ship.rb</h3>
-    <h4><span class="red">50.0 %</span> covered</h4>
+    <h4><span class="red">57.14 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
@@ -1196,49 +1196,55 @@
           <code class="ruby">  belongs_to :user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :body, length: { maximum: 170 }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.timeline(user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
+        <li class="missed" data-hits="0" data-linenumber="6">
           
           
           <code class="ruby">    following_ids = user.followees(User, pluck: :id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
+        <li class="missed" data-hits="0" data-linenumber="7">
           
           
           <code class="ruby">    all_ids= following_ids &lt;&lt; user.id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
+        <li class="missed" data-hits="0" data-linenumber="8">
           
           
           <code class="ruby">    Ship.where(user_id: all_ids).order(&quot;created_at DESC&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">end</code>
@@ -1253,8 +1259,8 @@
     <h3>app/models/user.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1292,22 +1298,22 @@
           <code class="ruby">  has_secure_password</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  validates :username, :email, presence: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">  validates :username, :email, uniqueness: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  validates :password, length: { minimum: 8, maximum: 20 }, on: :create</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -2939,7 +2945,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    @ship = @@valid_user.ships.create(body: Faker::Lorem.paragraph(5))</code>
+          <code class="ruby">    @ship = @@valid_user.ships.create(body: Faker::Lorem.paragraph(9))</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
