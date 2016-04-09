@@ -61,6 +61,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
+    docile (1.1.5)
     erubis (2.7.0)
     execjs (2.6.0)
     faker (1.6.3)
@@ -138,6 +139,11 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     socialization (1.2.0)
       activerecord
     spring (1.6.4)
@@ -182,6 +188,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
+  simplecov
   socialization
   spring
   turbolinks

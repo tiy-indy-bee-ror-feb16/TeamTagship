@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'socialization'
 
 group :development do
+  # better_errors for better debugging
   gem "better_errors"
 end
 # Use Unicorn as the app server
@@ -45,6 +46,8 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Simplecov for looking at test coverage
+  gem 'simplecov'
 end
 
 group :development do
