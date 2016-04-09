@@ -1,1 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user1:
+  username: WildMonkey666
+  email: wmonkey@gardenstate.com
+  password: "irulejungle"
+
+user2:
+  username: BarfDrinker
+  email: ilikethetaste@noreally.org
+  password: "crymyselftosleep"
