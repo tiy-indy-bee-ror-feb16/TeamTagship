@@ -1,5 +1,6 @@
 class Ship < ActiveRecord::Base
   belongs_to :user
+  validates :body, length: { maximum: 170 }
 
   def self.timeline(user)
     following_ids = user.followees(User, pluck: :id)
