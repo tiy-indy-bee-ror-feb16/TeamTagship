@@ -48,8 +48,6 @@ group :development, :test do
   gem 'byebug'
   # Simplecov for looking at test coverage
   gem 'simplecov'
-  # Factory_girl for better fixtures
-  gem 'factory_girl'
 end
 
 group :development do
