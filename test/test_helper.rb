@@ -9,23 +9,18 @@ class ActiveSupport::TestCase
   # fixtures :all # don't use fixtures
 
   # Add more helper methods to be used by all tests here...
-end
 
-class Minitest::Test
-
-  def self.user_hash(valid: true, inserted_value: nil, *args=nil)
-      valid_hash = { username: Faker::Internet.user_name, email: Faker::Internet.email, password: Faker::Internet.password(8) }
-      if valid
-        valid_hash
+  def self.user_hash(valid: true, inserted_value: nil, key: nil)
+    valid_hash = { username: Faker::Internet.user_name, email: Faker::Internet.email, password: Faker::Internet.password(8) }
+    if valid
+      valid_hash
+    else
+      if key.nil?
+        x[x.to_a.sample.flatten.first] = inserted_value # sets a random key in the hash to inserted_value
       else
-        if *args.nil?
-          x[x.to_a.sample.flatten.first] = inserted_value # sets a random key in the hash to nil
-        else
-          args.each do |arg|
-            x[:arg] = inserted_value # sets specific keys in the hash to nil
-          end
-        end
+        x[:key] = inserted_value # sets specific key in the hash to inserted_value
       end
+    end
   end
 
 
@@ -51,7 +46,7 @@ class Minitest::Test
   end
 
   3.times do # easy password
-    @@users[:invalid][:easy_password].push(User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "BAAGAAAB".downcase))
+    @@users[:invalid][:easy_password].push(User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "baagaaab"))
   end
 
   3.times do # no password
@@ -75,4 +70,5 @@ class Minitest::Test
   end
 
   @@valid_user = @@users[:valid].sample # a random valid user
+
 end
