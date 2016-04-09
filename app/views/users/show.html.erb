@@ -2,14 +2,12 @@
   <div class="row">
     <div class="col-md-4 user-info">
       <%= @user.username %>
-      <%= simple_form_for @ship do |f| %>
-        <%= f.input :body %>
-        <%= f.submit %>
-      <% end %>
+      <div class="comments_form">
+        <%= render partial: 'follow_logic' %>
+      </div>
     </div>
     <div class="col-md-8 timeline">
-      
-
+      <%= %>
     </div>
   </div>
 </div>
