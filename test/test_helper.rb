@@ -66,7 +66,7 @@ class ActiveSupport::TestCase
   end
 
   3.times do # no email
-    @@users[:invalid][:no_email].push(User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: Faker::Internet.password(8)))
+    @@users[:invalid][:no_email].push(User.create(username: Faker::Internet.user_name, password: Faker::Internet.password(8)))
   end
 
   @@valid_user = @@users[:valid].sample # a random valid user
@@ -81,7 +81,7 @@ class ActiveSupport::TestCase
 
   # Making ships
   @users.each do |u|
-    rand(5..25).times do
+    rand(1..5).times do
       u.ships.create!(body: Faker::Lorem.sentence(2))
     end
   end
