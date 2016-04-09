@@ -2,11 +2,19 @@ Rails.application.routes.draw do
   resources :users, except: [:index] do
     resources :ships, except: [:edit, :update]
   end
+
+  resources :users, only: [:show] do
+    member do
+      get 'follow'
+      get 'unfollow'
+    end
+  end
+
   get '/login' => 'sessions#new', as: :login
   post '/login' => 'sessions#create', as: :login_create
   delete '/logout' => 'sessions#destroy', as: :logout
 
-  root 'ships#index' 
+  root 'ships#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 user-info">
+      <%= @user.username %>
+      <div class="comments_form">
+        <%= render partial: 'follow_logic' %>
+      </div>
+    </div>
+    <div class="col-md-8 timeline">
+      <%= %>
+    </div>
+  </div>
+</div>
