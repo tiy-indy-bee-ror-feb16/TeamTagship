@@ -1,4 +1,3 @@
-</div>
   <% if current_user.follows?(@user) %>
     <%= link_to "Unfollow", unfollow_user_path(user_id: @user.id), class: "btn btn-primary"%>
   <% else %>
