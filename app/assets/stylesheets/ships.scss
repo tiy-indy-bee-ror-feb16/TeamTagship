@@ -1,0 +1,174 @@
+// Place all the styles related to the ships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary: #404040;
+$secondary: #66ccff;
+$grey: #d9d9d9;
+
+.timeline-full-page {
+  margin-top: 1em;
+
+  .timeline {
+    border: 1px solid $grey;
+    border-radius: 10px;
+    margin-right: 1em;
+
+    p {
+      margin-top: 10px;
+    }
+
+    p a {
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.user-info-column {
+  border: 1px solid $grey;
+  border-top: 0;
+  border-radius: 10px;
+  margin-right: 1em;
+  padding: 0px 12px 9px 12px;
+
+  .user-info-row {
+    background-color: #003b59;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+    .user-avatar {
+      padding: 15px;
+
+      img {
+        border: 3px solid white;
+      }
+    }
+
+    .user-text {
+      padding-left: 0;
+
+      h4 {
+        color: #fff;
+        margin: 0;
+        margin-top: 2.25em;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .user-stats {
+    margin-top: 1em;
+
+    .user-ships, .user-following, .user-followers {
+      h4 {
+        margin: 0;
+        color: $secondary;
+      }
+
+      p {
+        margin-bottom: .25em;
+        color: #999;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.ship-holder {
+  border-bottom: 1px solid $grey;
+  border-top: 0;
+  padding: 9px 12px;
+  min-height: 51px;
+  line-height: inherit;
+
+  .ship-left {
+
+    padding: 0;
+
+    img {
+      margin: 0;
+      min-height: 20px;
+    }
+
+  }
+
+  .ship-right {
+    position: relative;
+    bottom: 0;
+    padding: 0;
+    padding-left: .5em;
+    height: 100%;
+  }
+}
+
+.ship-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .ship-body-header {
+    flex: 1;
+    align-self: flex-start;
+
+    .username {
+      display: inline-block;
+      font-weight: bold;
+      color: $secondary;
+    }
+
+    .created-at {
+      display: inline-block;
+      color: #ccc;
+      font-size: 10px;
+    }
+  }
+
+  .ship-body-body {
+    flex: 1;
+    margin-bottom: .5em;
+    color: $primary;
+    align-self: flex-start;
+  }
+
+  .ship-body-footer {
+    flex: 1;
+    color: $grey;
+    align-self: flex-end;
+  }
+
+  .ship-body-footer p {
+    margin: 0;
+  }
+
+}
+
+.timeline .row .pagination {
+  color: $secondary;
+  margin-left: 1.5em;
+
+  .active a {
+    background-color: $secondary !important;
+    border-color: $secondary !important;
+    color: #fff !important;
+  }
+
+  .page a {
+    color: $secondary;
+  }
+
+  .gap a {
+    color: $secondary;
+  }
+
+  .next a {
+    color: $secondary;
+  }
+
+  .last a {
+    color: $secondary;
+  }
+
+}
