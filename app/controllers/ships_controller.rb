@@ -15,18 +15,16 @@ class ShipsController < ApplicationController
   end
 
   def new
-    @ship = Ship.new
+      @ship = current_user.ships.new
   end
 
   def create
-    @ship = current_user.ships.create(ship_params)
-
-    respond_to do |format|
-      if @ship.save
-        format.html { redirect_to user_ships_path, notice: 'ship was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    @ship = current_user.ships.new(ship_params)
+    if @ship.save
+      flash[:success] = "Your ship has sailed!"
+      redirect_to user_path(id: current_user.id)
+    else
+      flash[:warning] = "Your ship can't set sail like that."
     end
   end
 
