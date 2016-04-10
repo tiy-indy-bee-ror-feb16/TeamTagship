@@ -7,7 +7,7 @@ class ShipsController < ApplicationController
       @ship = Ship.new
       @ships = Ship.timeline(@user).page(params[:page]).per(100)
     else
-      #link to marketing landing page partial view
+      redirect_to welcome_path
     end
   end
 
@@ -15,16 +15,18 @@ class ShipsController < ApplicationController
   end
 
   def new
-      @ship = current_user.ships.new
+    @ship = Ship.new
   end
 
   def create
-    @ship = current_user.ships.new(ship_params)
-    if @ship.save
-      flash[:success] = "Your ship has sailed!"
-      redirect_to user_path(id: current_user.id)
-    else
-      flash[:warning] = "Your ship can't set sail like that."
+    @ship = current_user.ships.create(ship_params)
+
+    respond_to do |format|
+      if @ship.save
+        format.html { redirect_to user_ships_path, notice: 'ship was successfully created.' }
+      else
+        format.html { render :new }
+      end
     end
   end
 

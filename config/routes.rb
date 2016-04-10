@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   root 'ships#index'
 
+  get '/welcome' => 'welcome#index', as: :welcome
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
