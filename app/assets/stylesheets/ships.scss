@@ -13,6 +13,16 @@ $grey: #d9d9d9;
     border: 1px solid $grey;
     border-radius: 10px;
     margin-right: 1em;
+
+    p {
+      margin-top: 10px;
+    }
+
+    p a {
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -160,5 +170,5 @@ $grey: #d9d9d9;
   .last a {
     color: $secondary;
   }
-  
+
 }
