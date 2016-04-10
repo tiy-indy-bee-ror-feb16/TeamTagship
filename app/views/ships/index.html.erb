@@ -24,11 +24,16 @@
           <h4><%= @user.followers_count %></h4>
         </div>
       </div>
-
+      <%= button_to "Ship it!", new_user_ship_path(current_user), class: "btn btn-lg btn-info pull-right", method: "get" %>
 
     </div>
     <div class="col-md-7 col-sm-6 timeline">
-      <%= render @ships %>
+      <% if no_timeline(@user) %>
+        <p class="text-center">You're not following anyone yet :(</p>
+        <p><%= link_to "Let's fix that." %></p>
+      <% else %>
+        <%= render @ships %>
+      <% end %>
       <div class="row">
         <%= paginate @ships %>
       </div>
