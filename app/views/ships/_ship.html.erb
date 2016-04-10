@@ -11,13 +11,11 @@
         </div>
         <div class="created-at">
           at <%= ship.created_at.strftime("%I:%M%p") %>
+          on <%= ship.created_at.to_date.to_s %>
         </div>
       </div>
       <div class="ship-body-body">
         <%= ship.body %>
-      </div>
-      <div class="ship-body-footer">
-        <p>Posted on <%= ship.created_at.to_date.to_s %></p>
       </div>
     </div>
   </div>
