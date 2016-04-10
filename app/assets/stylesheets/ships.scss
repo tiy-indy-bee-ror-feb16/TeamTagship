@@ -57,7 +57,11 @@ $grey: #d9d9d9;
         color: $secondary;
       }
 
-      p { margin-bottom: .25em; }
+      p {
+        margin-bottom: .25em;
+        color: #999;
+        font-size: 10px;
+      }
     }
   }
 }
@@ -156,5 +160,5 @@ $grey: #d9d9d9;
   .last a {
     color: $secondary;
   }
-
+  
 }
