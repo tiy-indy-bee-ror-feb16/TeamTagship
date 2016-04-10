@@ -3,10 +3,11 @@
     <div class="col-md-4 user-info">
       <%= @user.username %>
       <div class="comments_form">
-        <%= render partial: 'follow_logic' %>
+        <%= render partial: 'follow_logic' if own_page? %>
       </div>
     </div>
     <div class="col-md-8 timeline">
+      <%= render @ships %>
       <%= %>
     </div>
   </div>
