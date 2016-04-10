@@ -9,7 +9,16 @@ $grey: #d9d9d9;
 .timeline-full-page {
   margin-top: 1em;
 
-  .timeline {
+  .timeline-left {
+    padding: 0;
+    margin-right: 1em;
+
+    .create-ship {
+      margin-top: 1em;
+    }
+  }
+
+  .timeline-right {
     border: 1px solid $grey;
     border-radius: 10px;
     margin-right: 1em;
@@ -26,23 +35,30 @@ $grey: #d9d9d9;
   }
 }
 
-.user-info-column {
+.user-info-block {
+  margin: 0;
+  overflow: hidden;
+}
+
+.user-info-stuff {
   border: 1px solid $grey;
   border-top: 0;
   border-radius: 10px;
-  margin-right: 1em;
-  padding: 0px 12px 9px 12px;
+  padding: 0;
 
   .user-info-row {
     background-color: #003b59;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    width: 100%;
+    margin: 0;
 
     .user-avatar {
       padding: 15px;
 
       img {
         border: 3px solid white;
+        border-radius: 10px;
       }
     }
 
@@ -60,6 +76,7 @@ $grey: #d9d9d9;
 
   .user-stats {
     margin-top: 1em;
+    padding: 0px 12px 9px 12px;
 
     .user-ships, .user-following, .user-followers {
       h4 {
