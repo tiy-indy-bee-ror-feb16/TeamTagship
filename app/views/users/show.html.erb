@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="follow_logic">
-        <%= render partial: 'follow_logic' if own_page? %>
+        <%= render partial: 'follow_logic' if own_page? && current_user %>
       </div>
       <div class="login_logout">
         <%= render partial: 'login_logout' %>
