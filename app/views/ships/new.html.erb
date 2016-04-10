@@ -1,4 +1,5 @@
-<%= simple_form_for @ship do |f| %>
-  <%= f.input :body %>
-  <%= f.submit %>
-<% end %>
+<h1>New Ship</h1>
+
+<%= render partial: 'form' %>
+
+<%= link_to "Home", root_path, class: "btn btn-default" %>
