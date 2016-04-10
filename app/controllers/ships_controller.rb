@@ -15,7 +15,8 @@ class ShipsController < ApplicationController
   end
 
   def new
-    @ship = Ship.new
+    @ship = current_user.ships.new
+    @user = User.find(params[:user_id])
   end
 
   def create

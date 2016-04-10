@@ -24,7 +24,7 @@
           <h4><%= @user.followers_count %></h4>
         </div>
       </div>
-
+      <%= button_to "Ship it!", new_user_ship_path(current_user), class: "btn btn-lg btn-info pull-right", method: "get" %>
 
     </div>
     <div class="col-md-7 col-sm-6 timeline">
