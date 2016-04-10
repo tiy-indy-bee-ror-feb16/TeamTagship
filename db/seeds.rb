@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-100.times do
+50.times do
   User.create!(
   username: Faker::Internet.user_name,
   email: Faker::Internet.safe_email,
@@ -25,7 +25,7 @@ following.each { |followed| user.follow!(followed) }
 followers.each { |follower| follower.follow!(user) }
 
 # Ships
-users = User.order(:created_at).take(50)
+users = User.all
 20.times do
   users.each { |u| u.ships.create!(body: Faker::Lorem.sentence(2)) }
 end
