@@ -1,9 +1,9 @@
 <div class="row ship-holder">
-  <div class="col-md-2 col-sm-2 ship-left">
-    <img src="https://unsplash.it/100/100/?random
+  <div class="col-md-1 col-sm-2 col-xs-1 ship-left">
+    <img class= "img-responsive img-rounded" src="https://unsplash.it/48/48/?random
 " alt="" />
   </div>
-  <div class="col-md-10 col-sm-10 ship-right">
+  <div class="col-md-11 col-sm-10 col-xs-11 ship-right">
     <div class="ship-body">
       <div class="ship-body-header">
         <div class="username">
@@ -11,13 +11,11 @@
         </div>
         <div class="created-at">
           at <%= ship.created_at.strftime("%I:%M%p") %>
+          on <%= ship.created_at.to_date.to_s %>
         </div>
       </div>
       <div class="ship-body-body">
         <%= ship.body %>
-      </div>
-      <div class="ship-body-footer">
-        <p>Posted on <%= ship.created_at.to_date.to_s %></p>
       </div>
     </div>
   </div>

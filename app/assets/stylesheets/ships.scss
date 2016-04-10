@@ -6,24 +6,85 @@ $primary: #404040;
 $secondary: #66ccff;
 $grey: #d9d9d9;
 
+.timeline-full-page {
+  margin-top: 1em;
 
-.ship-holder {
+  .timeline {
+    border: 1px solid $grey;
+    border-radius: 10px;
+    margin-right: 1em;
+  }
+}
+
+.user-info-column {
   border: 1px solid $grey;
   border-top: 0;
+  border-radius: 10px;
+  margin-right: 1em;
+  padding: 0px 12px 9px 12px;
 
-  .ship-left {
-    margin-top: .5em;
-    margin-bottom: .5em;
-    overflow: hidden;
+  .user-info-row {
+    background-color: #003b59;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 
-    img {
-      width: 100%;
+    .user-avatar {
+      padding: 15px;
+
+      img {
+        border: 3px solid white;
+      }
+    }
+
+    .user-text {
+      padding-left: 0;
+
+      h4 {
+        color: #fff;
+        margin: 0;
+        margin-top: 2.25em;
+        vertical-align: bottom;
+      }
     }
   }
 
-  .ship-right {
+  .user-stats {
+    margin-top: 1em;
+
+    .user-ships, .user-following, .user-followers {
+      h4 {
+        margin: 0;
+        color: $secondary;
+      }
+
+      p { margin-bottom: .25em; }
+    }
+  }
+}
+
+.ship-holder {
+  border-bottom: 1px solid $grey;
+  border-top: 0;
+  padding: 9px 12px;
+  min-height: 51px;
+  line-height: inherit;
+
+  .ship-left {
+
     padding: 0;
-    padding-right: .5em;
+
+    img {
+      margin: 0;
+      min-height: 20px;
+    }
+
+  }
+
+  .ship-right {
+    position: relative;
+    bottom: 0;
+    padding: 0;
+    padding-left: .5em;
     height: 100%;
   }
 }
@@ -32,7 +93,7 @@ $grey: #d9d9d9;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: .5em;
+  height: 100%;
 
   .ship-body-header {
     flex: 1;
@@ -47,7 +108,7 @@ $grey: #d9d9d9;
     .created-at {
       display: inline-block;
       color: #ccc;
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 
@@ -66,6 +127,34 @@ $grey: #d9d9d9;
 
   .ship-body-footer p {
     margin: 0;
+  }
+
+}
+
+.timeline .row .pagination {
+  color: $secondary;
+  margin-left: 1.5em;
+
+  .active a {
+    background-color: $secondary !important;
+    border-color: $secondary !important;
+    color: #fff !important;
+  }
+
+  .page a {
+    color: $secondary;
+  }
+
+  .gap a {
+    color: $secondary;
+  }
+
+  .next a {
+    color: $secondary;
+  }
+
+  .last a {
+    color: $secondary;
   }
 
 }
