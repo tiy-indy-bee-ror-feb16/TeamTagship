@@ -33,13 +33,11 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'simple_form'
 gem 'socialization'
 
-# group :development do
-#   gem "better_errors"
-# end
 group :development do
 # better_errors for better debugging
   gem "better_errors"
 end
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

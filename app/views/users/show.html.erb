@@ -1,13 +1,38 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 user-info">
-      <%= @user.username %>
-      <div class="comments_form">
-        <%= render partial: 'follow_logic' %>
+  <div class="row timeline-full-page">
+    <div class="col-md-4 col-sm-5 user-info-column">
+      <div class="row user-info-row">
+        <div class="col-md-3 col-sm-4 col-xs-3 user-avatar">
+          <img class= "img-responsive img-rounded" src="https://unsplash.it/68/68/?random
+      " alt="" />
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-4 user-text">
+          <h4>@<%= @user.username %></h4>
+        </div>
+      </div>
+      <div class="row user-stats">
+        <div class="col-md-3 col-sm-3 col-xs-3 user-ships">
+          <p>SHIPS</p>
+          <h4><%= @user.ships.count %></h4>
+        </div>
+        <div class="col-md-4 col-sm-5 col-xs-4 user-following">
+          <p>FOLLOWING</p>
+          <h4><%= @user.followees_count %></h4>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 user-followers">
+          <p>FOLLOWERS</p>
+          <h4><%= @user.followers_count %></h4>
+        </div>
+      </div>
+      <div class="follow_logic">
+        <%= render partial: 'follow_logic' if own_page? %>
+      </div>
+      <div class="login_logout">
+        <%= render partial: 'login_logout' %>
       </div>
     </div>
-    <div class="col-md-8 timeline">
-      <%= %>
+    <div class="col-md-7 col-sm-6 timeline">
+      <%= render @ships %>
     </div>
   </div>
 </div>
