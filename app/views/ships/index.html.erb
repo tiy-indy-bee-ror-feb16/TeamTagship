@@ -25,8 +25,13 @@
           </div>
         </div>
       </div>
-      <div class="row create-ship">
-        <%= button_to "Ship it!", new_user_ship_path(current_user), class: "btn btn-lg btn-info pull-right", method: "get" %>
+      <ul class="list-inline text-right">
+        <div class="follow_logic">
+          <%= render partial: 'users/login_logout' %>
+        </div>
+      </ul>
+      <div class="row create-ship text-right">
+          <%= button_to "Ship it!", new_user_ship_path(current_user), class: "btn btn-lg btn-info pull-right", method: "get" %>
       </div>
     </div>
     <div class="col-md-7 col-sm-6 timeline-right">
