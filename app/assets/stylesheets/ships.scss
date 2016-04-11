@@ -14,7 +14,7 @@ $grey: #d9d9d9;
     margin-right: 1em;
 
     .create-ship {
-      margin-top: 1em;
+      margin: 1em 0em 1em 0em;
     }
   }
 
@@ -43,18 +43,18 @@ $grey: #d9d9d9;
 .user-info-stuff {
   border: 1px solid $grey;
   border-top: 0;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 0;
 
   .user-info-row {
     background-color: #003b59;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
     width: 100%;
     margin: 0;
 
     .user-avatar {
-      padding: 15px;
+      padding: 1em;
 
       img {
         border: 3px solid white;
@@ -70,15 +70,23 @@ $grey: #d9d9d9;
         margin: 0;
         margin-top: 2.25em;
         vertical-align: bottom;
+
+        a {
+          color: #fff;
+        }
       }
     }
   }
 
   .user-stats {
-    margin-top: 1em;
-    padding: 0px 12px 9px 12px;
+    margin: 0;
+    padding: 1em;
+    width: 100%;
 
     .user-ships, .user-following, .user-followers {
+      padding: 0;
+      padding-right: 1em;
+
       h4 {
         margin: 0;
         color: $secondary;
@@ -132,8 +140,11 @@ $grey: #d9d9d9;
 
     .username {
       display: inline-block;
-      font-weight: bold;
-      color: $secondary;
+
+      a {
+        font-weight: bold;
+        color: $secondary;
+      }
     }
 
     .created-at {
@@ -162,7 +173,7 @@ $grey: #d9d9d9;
 
 }
 
-.timeline .row .pagination {
+.timeline-right .row .pagination {
   color: $secondary;
   margin-left: 1.5em;
 

@@ -3,11 +3,11 @@
     <div class="col-md-4 col-sm-5 timeline-left">
       <div class="user-info-stuff">
         <div class="row user-info-row">
-          <div class="col-md-3 col-sm-4 col-xs-3 user-avatar">
-            <%= link_to image_tag('https://unsplash.it/68/68/?random'), class: "img-responsive img-rounded" %>
+          <div class="col-md-4 col-sm-4 col-xs-3 user-avatar">
+            <%= link_to image_tag('https://unsplash.it/68/68/?random'), user_path(current_user), class: "img-responsive img-rounded" %>
           </div>
-          <div class="col-md-9 col-sm-8 col-xs-4 user-text">
-            <h4>@<%= @user.username %></h4>
+          <div class="col-md-8 col-sm-8 col-xs-4 user-text">
+            <h4>@<%= link_to @user.username, user_path(current_user) %></h4>
           </div>
         </div>
         <div class="row user-stats">
@@ -26,9 +26,7 @@
         </div>
       </div>
       <div class="row create-ship">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <%= button_to "Ship it!", new_user_ship_path(current_user), class: "btn btn-lg btn-info pull-right", method: "get" %>
-        </div>
+        <%= button_to "Ship it!", new_user_ship_path(current_user), class: "btn btn-lg btn-info pull-right", method: "get" %>
       </div>
     </div>
     <div class="col-md-7 col-sm-6 timeline-right">
