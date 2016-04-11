@@ -7,7 +7,7 @@
     <div class="ship-body">
       <div class="ship-body-header">
         <div class="username">
-          <%= ship.user.username %>
+          <%= link_to ship.user.username, user_path(ship.user.id) %>
         </div>
         <div class="created-at">
           at <%= ship.created_at.strftime("%I:%M%p") %>
