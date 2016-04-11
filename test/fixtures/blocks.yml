@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blocker: 1
+  blocked: 1
+
+two:
+  blocker: 1
+  blocked: 1

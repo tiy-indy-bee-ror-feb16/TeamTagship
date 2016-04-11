@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     member do
       get 'follow'
       get 'unfollow'
+      get 'block'
+      delete 'unblock'
     end
   end
 
